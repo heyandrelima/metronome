@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 const audioUrl = require('../assets/click.wav');
 
 const Player = (props) => {
-    const { bpm } = props;
+    const bpm = props.bpm || 60;
     const [playing, setPlaying] = useState(false);
     const audio = new Audio(audioUrl);
 
@@ -28,10 +28,9 @@ const Player = (props) => {
 
     return (
         <div>
-            <h2>Player</h2>
             <p>{bpm} bpm</p>
-            {playing ? <button onClick={handlePause}>Pause</button>
-                : <button onClick={handlePlay}>Play</button>
+            {playing ? <button className="pause-button" onClick={handlePause}>Pause</button>
+                : <button className="play-button" onClick={handlePlay}>Play</button>
             }
         </div>
     );

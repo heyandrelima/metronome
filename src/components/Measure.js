@@ -52,7 +52,7 @@ const Measure = (props) => {
     return (
         <div>
             <h2>Type the BPM or tap CTRL to count it</h2>
-            <input type="number" value={bpm} onChange={handleType} />
+            <input className="bpm-input" type="number" value={bpm} onChange={handleType} />
         </div>
     );
 };
